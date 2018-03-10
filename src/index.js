@@ -1,6 +1,6 @@
 class SmartCalculator {
     constructor(initialValue) {
-       
+        this.mind = '';
         this.remember('',initialValue)
     }
 
@@ -29,9 +29,13 @@ class SmartCalculator {
         return this
     }
 
+    remember(operator, number){
+        this.mind = this.mind.concat(operator).concat(number)
+    }
 
-
-    
+    valueOf() {
+        return eval(this.mind)
+    }
 }
 
 module.exports = SmartCalculator;
